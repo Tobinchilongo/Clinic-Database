@@ -38,19 +38,26 @@ ALTER TABLE medical_histories
     ADD CONSTRAINT patient_id_fk 
         FOREIGN KEY (patient_id) 
             REFERENCES patients(id);
+
 ALTER TABLE invoices
     ADD CONSTRAINT medical_history_id_fk 
         FOREIGN KEY (medical_history_id) 
             REFERENCES medical_histories(id);
 
-  ALTER TABLE invoice_items 
+ALTER TABLE invoice_items 
     ADD CONSTRAINT invoice_id_fk 
         FOREIGN KEY (invoice_id) 
             REFERENCES invoices(id);
 
-    ALTER TABLE invoice_items
-     ADD CONSTRAINT treatment_id_fk 
+ALTER TABLE invoice_items
+    ADD CONSTRAINT treatment_id_fk 
         FOREIGN KEY (treatment_id) 
             REFERENCES treatments(id);
 
-      
+CREATE TABLE medical_treatments (
+    id serial PRIMARY KEY,
+    medical_history_id int not null,
+    treatment_id int not null,
+    CONSTRAINT medical_history_id_fk2 FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id),
+    CONSTRAINT treatment_id_fk2 FOREIGN KEY (treatment_id) REFERENCES treatments(id)
+);
