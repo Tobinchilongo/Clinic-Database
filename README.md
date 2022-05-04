@@ -2,6 +2,7 @@
 
 > This is a project about creating a Clinic Database from a diagram.
 
+![clinic_diagram](https://user-images.githubusercontent.com/20567503/166657343-236f38b7-9f3c-4626-90f0-a89e0a8efb96.png)
 
 ## Getting Started
 
