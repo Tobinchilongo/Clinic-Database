@@ -11,3 +11,10 @@ CREATE TABLE invoices (
     payed_at timestamp not null,
     medical_history_id int not null
 );
+
+CREATE TABLE treatments (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    type VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL
+);
+
