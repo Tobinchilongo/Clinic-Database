@@ -18,3 +18,11 @@ CREATE TABLE treatments (
     name VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE invoice_items (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    unit_price decimal not null,
+    quantity int not null,
+    total_price decimal not null,
+    invoice_id int not null,
+    treatment_id int not null
+);
